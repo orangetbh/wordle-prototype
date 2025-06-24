@@ -1,0 +1,40 @@
+@import "tailwindcss";
+@plugin "tailwindcss-motion";
+
+@theme {
+    --color-correct: #6aaa64;
+    --color-semicorrect: #c9b458;
+    --color-incorrect: #787c7e
+}
+
+@layer utilities {
+    @keyframes incorrect-pulse {
+        0% {
+        background-color: white;
+        }
+        50% {
+        background-color: #f87171;
+        }
+        100% {
+        background-color: white;
+        }
+    }
+    @keyframes correct-pulse {
+        0% {
+        background-color: white;
+        }
+        50% {
+        background-color: #6aaa64;
+        }
+        100% {
+        background-color: white;
+        }
+    }
+
+    .animate-incorrect-pulse {
+        animation: incorrect-pulse 0.75s ease-in-out;
+    }
+    .animate-correct-pulse {
+        animation: correct-pulse 0.75s ease-in-out;
+    }
+}
